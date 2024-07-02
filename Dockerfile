@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1.2
-FROM clux/muslrust:1.64.0 as builder
+FROM clux/muslrust as builder
 
 WORKDIR /src
-RUN git clone --depth 1 --branch v0.9.3 https://github.com/playit-cloud/playit-agent playit-agent
+RUN git clone --depth 1 https://github.com/playit-cloud/playit-agent playit-agent
 WORKDIR /src/playit-agent
 RUN cargo build --release
 
